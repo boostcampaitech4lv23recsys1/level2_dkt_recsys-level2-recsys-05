@@ -6,3 +6,6 @@ Boostcamp A.I. Tech 4기 DKT 트랙 베이스라인 코드입니다.
 + `lightgcn/` 이 폴더 내에는 Graph의 베이스라인이 담겨져있습니다.
 
 # level2_dkt_recsys-level2-recsys-05
+
+# feature engineering
+https://drive.google.com/drive/folders/1YbSSF3bbSXAfkuB3QS_Zc9IcIlDGRVPf?usp=sharing
