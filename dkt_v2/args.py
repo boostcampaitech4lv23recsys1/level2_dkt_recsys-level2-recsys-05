@@ -19,7 +19,7 @@ def parse_args():
     )
 
     parser.add_argument(
-        "--file_name", default="train_feature_engineering.csv", type=str, help="train file name"
+        "--file_name", default="total_except.csv", type=str, help="train file name"
     )
 
     parser.add_argument(
@@ -67,6 +67,9 @@ def parse_args():
     # 
     parser.add_argument(
         "--max_seq_len", default=20, type=int, help="max sequence length"
+    )
+    parser.add_argument(
+        "--stride", default=20, type=int, help="stride"
     )
     parser.add_argument("--num_workers", default=1, type=int, help="number of workers")
 

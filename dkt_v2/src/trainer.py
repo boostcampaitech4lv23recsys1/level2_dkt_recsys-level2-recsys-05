@@ -43,7 +43,7 @@ def run(args, train_data, valid_data, model):
         ### TODO: model save or early stopping
         wandb.log(
             {
-                "epoch": epoch,
+                "epoch": epoch+1,
                 "train_loss_epoch": train_loss,
                 "train_auc_epoch": train_auc,
                 "train_acc_epoch": train_acc,
@@ -52,17 +52,23 @@ def run(args, train_data, valid_data, model):
             }
         )
         if auc > best_auc:
+            best_epoch = epoch+1
             best_auc = auc
+            best_acc = acc
+            best_train_auc = train_auc
+            best_train_acc = train_acc
+            best_train_loss = train_loss
+            early_stopping_counter = 0
             # torch.nn.DataParallel로 감싸진 경우 원래의 model을 가져옵니다.
-            model_to_save = model.module if hasattr(model, "module") else model
-            save_checkpoint(
-                {
-                    "epoch": epoch + 1,
-                    "state_dict": model_to_save.state_dict(),
-                },
-                args.model_dir,
-                args.model_name,
-            )
+            # model_to_save = model.module if hasattr(model, "module") else model
+            # save_checkpoint(
+            #     {
+            #         "epoch": epoch + 1,
+            #         "state_dict": model_to_save.state_dict(),
+            #     },
+            #     args.model_dir,
+            #     args.model_name,
+            # )
             early_stopping_counter = 0
         else:
             early_stopping_counter += 1
@@ -73,8 +79,18 @@ def run(args, train_data, valid_data, model):
                 break
 
         # scheduler
-        if args.scheduler == "plateau":
-            scheduler.step(best_auc)
+        # if args.scheduler == "plateau":
+        #     scheduler.step(best_auc)
+    wandb.log(
+        {
+            "best_epoch": best_epoch,
+            "best_train_loss": best_train_loss,
+            "best_train_auc": best_train_auc,
+            "best_train_acc": best_train_acc,
+            "best_valid_auc": best_auc,
+            "best_valid_acc": best_acc,
+        }
+    )
 
 
 def train(train_loader, model, optimizer, scheduler, args):
@@ -83,8 +99,8 @@ def train(train_loader, model, optimizer, scheduler, args):
     total_preds = []
     total_targets = []
     losses = []
-    for step, batch in tqdm(enumerate(train_loader), total=len(train_loader)):
-    # for step, batch in enumerate(train_loader):
+    # for step, batch in tqdm(enumerate(train_loader), total=len(train_loader)):
+    for step, batch in enumerate(train_loader):
         input = list(map(lambda t: t.to(args.device), batch)) # cate_x, cont_x, mask, target
         targets = input[-1] 
         preds = model(input[:-1])
@@ -118,8 +134,8 @@ def validate(valid_loader, model, args):
 
     total_preds = []
     total_targets = []
-    for step, batch in tqdm(enumerate(valid_loader), total=len(valid_loader)):
-    # for step, batch in enumerate(valid_loader):
+    # for step, batch in tqdm(enumerate(valid_loader), total=len(valid_loader)):
+    for step, batch in enumerate(valid_loader):
         input = list(map(lambda t: t.to(args.device), batch))
         targets = input[-1]
         preds = model(input[:-1])
@@ -144,9 +160,8 @@ def validate(valid_loader, model, args):
 
 
 def inference(args, test_data, model):
-
     model.eval()
-    _, test_loader = get_loaders(args, None, test_data)
+    _, test_loader = get_loaders(args, train=None, valid=test_data)
 
     total_preds = []
     
