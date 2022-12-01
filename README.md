@@ -7,5 +7,6 @@ Boostcamp A.I. Tech 4기 DKT 트랙 베이스라인 코드입니다.
 
 # level2_dkt_recsys-level2-recsys-05
 
-# feature engineering
-https://drive.google.com/drive/folders/1YbSSF3bbSXAfkuB3QS_Zc9IcIlDGRVPf?usp=sharing
+# Data Set
+ + Just Engineering (https://drive.google.com/drive/folders/1YbSSF3bbSXAfkuB3QS_Zc9IcIlDGRVPf?usp=sharing)
+ + Engineering & decomposition (https://drive.google.com/file/d/17k3bbgXrl1StZrqIEx6zjPNuK5k1gl93/view?usp=share_link)
