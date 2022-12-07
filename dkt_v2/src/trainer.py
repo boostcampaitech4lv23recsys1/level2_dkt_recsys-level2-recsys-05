@@ -9,7 +9,7 @@ from tqdm import tqdm
 from .criterion import get_criterion
 from .dataloader import get_loaders
 from .metric import get_metric
-from .model import LSTM, LSTMATTN, Bert
+from .model import LSTM, LSTMATTN, Bert, LastQuery
 from .optimizer import get_optimizer
 from .scheduler import get_scheduler
 
@@ -195,6 +195,8 @@ def get_model(args):
         model = LSTMATTN(args)
     if args.model == "bert":
         model = Bert(args)
+    if args.model == "lastquery":
+        model = LastQuery(args)
 
     return model
 
