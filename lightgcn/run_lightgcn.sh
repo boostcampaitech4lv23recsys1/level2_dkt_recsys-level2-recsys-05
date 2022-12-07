@@ -1,0 +1,1 @@
+python3 train.py #--embedding_dim 50 --num_layers 5 --alpha 0.01 --n_epoch 50 --learning_rate 5e-3

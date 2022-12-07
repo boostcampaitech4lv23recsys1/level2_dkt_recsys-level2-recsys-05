@@ -1,0 +1,1 @@
+python3 train.py --model bert # --max_seq_len 60 --hidden_dim 50 --lr 5e-3 --n_heads 2 --patience 10 --n_epochs 100 --drop_out 0.5 --n_layers 5 # --optimizer adam --scheduler plateau --hidden_dim 50 --n_heads 1 --lr 1e-3

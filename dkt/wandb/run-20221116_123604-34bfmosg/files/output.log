@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "train.py", line 31, in <module>
+    main(args)
+  File "train.py", line 24, in main
+    model = trainer.get_model(args).to(args.device)
+  File "/opt/ml/input/code/dkt/src/trainer.py", line 180, in get_model
+    model = Bert(args)
+  File "/opt/ml/input/code/dkt/src/model.py", line 186, in __init__
+    self.encoder = BertModel(self.config)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 884, in __init__
+    self.encoder = BertEncoder(config)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 552, in __init__
+    self.layer = nn.ModuleList([BertLayer(config) for _ in range(config.num_hidden_layers)])
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 552, in <listcomp>
+    self.layer = nn.ModuleList([BertLayer(config) for _ in range(config.num_hidden_layers)])
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 467, in __init__
+    self.attention = BertAttention(config)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 387, in __init__
+    self.self = BertSelfAttention(config, position_embedding_type=position_embedding_type)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 247, in __init__
+    raise ValueError(
+ValueError: The hidden size (50) is not a multiple of the number of attention heads (6)
