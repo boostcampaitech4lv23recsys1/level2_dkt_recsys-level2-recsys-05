@@ -18,9 +18,9 @@ class CustomDataset(Dataset):
         label = self.data['label'][idx]
         return edge, feature, label
 
-def load_data(train_path, test_path, device) :
-    train = pd.read_csv(train_path)
-    test = pd.read_csv(test_path)
+def load_data(args, device) :
+    train = pd.read_csv(args.file_name)
+    test = pd.read_csv(args.test_file_name)
 
     concat = pd.concat([train, test]).reset_index(drop=True)
 
@@ -31,8 +31,9 @@ def load_data(train_path, test_path, device) :
     train_dataloader = DataLoader(train_set, batch_size=2048, shuffle=True)
 
     nodes = concat.userID.nunique()+concat.assessmentItemID.nunique()
+    feature = max(concat['KnowledgeTag'].unique()) + 1
 
-    return train_dataloader, valid_data, test_data, nodes
+    return train_dataloader, valid_data, test_data, nodes, feature
 
 def preprocessing(data) :
     user2vec = {v:k+1 for k, v in enumerate(sorted(data.userID.unique()))}

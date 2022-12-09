@@ -5,7 +5,7 @@ from sklearn.metrics import roc_auc_score, accuracy_score
 import torch
 import torch.nn.functional as F
 from torch import Tensor
-from torch.nn import Embedding, ModuleList
+from torch.nn import Embedding, ModuleList, LSTM, Linear
 from torch.nn.modules.loss import _Loss
 from torch_sparse import SparseTensor
 
@@ -59,22 +59,19 @@ class LightGCN_LSTM(torch.nn.Module):
     def __init__(
         self,
         num_nodes: int,
-        embedding_dim: int,
-        hidden_dim: int,
         feature_len: int,
-        num_layers: int,
+        args,
         train_loader,
         valid_data,
-        patience: int,
         alpha: Optional[Union[float, Tensor]] = None,
         **kwargs,
     ):
         super().__init__()
 
         self.num_nodes = num_nodes
-        self.embedding_dim = embedding_dim
-        self.num_layers = num_layers
-        self.hidden_dim = hidden_dim
+        self.embedding_dim = args.embedding_dim
+        self.num_layers = args.n_layers
+        self.hidden_dim = args.hidden_dim
         self.feature_len = feature_len
 
         self.train_dataloader = train_loader
@@ -83,7 +80,7 @@ class LightGCN_LSTM(torch.nn.Module):
         self.valid_feature = valid_data['feature']
         self.valid_label = valid_data['label']
 
-        self.patience = patience
+        self.patience = args.patience
 
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0005)
         
@@ -99,8 +96,8 @@ class LightGCN_LSTM(torch.nn.Module):
         self.embedding = Embedding(self.num_nodes, self.embedding_dim)
         self.convs = ModuleList([LGConv(**kwargs) for _ in range(self.num_layers)])
         self.embedding_feature = Embedding(self.feature_len, self.embedding_dim)
-        self.lstm = nn.LSTM(self.embedding_dim*2, self.hidden_dim)
-        self.ln = nn.Linear(self.hidden_dim, 1)
+        self.lstm = LSTM(self.embedding_dim*2, self.hidden_dim)
+        self.ln = Linear(self.hidden_dim, 1)
         self.reset_parameters()
 
         self.model = self
