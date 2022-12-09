@@ -1,7 +1,13 @@
+import re
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+from collections import defaultdict
+from statsmodels.tsa.seasonal import STL
+from tqdm import tqdm
 
 def null_check(train_df, test_df, columns=['userID', 'assessmentItemID', 'testId', 'answerCode', 'Timestamp', 'KnowledgeTag']):
     if sum((train_df==train_df).sum().values * len(train_df.columns) == len(train_df) * len(train_df.columns)) == len(train_df.columns):
@@ -76,3 +82,58 @@ def extract_testId(df):
 def extract_assessmentItemID(df):
     df['assessmentItemCode'] = df['assessmentItemID'].apply(lambda x : int(x[7:]))
     return df
+
+def decomposition(total):
+    total_decompose_col = defaultdict(lambda: np.zeros(len(total)))
+    ignore = ['userID', 'assessmentItemID', 'testId', 'answerCode', 'Timestamp', 'KnowledgeTag', 'assessmentItemID_last', 'testId_first', 'testId_last', 'relative_answered_correctly']
+    for key, group in tqdm(total.groupby(by=["userID"]), total=total['userID'].nunique()):
+        indices = group.index
+        for idx, col in enumerate(group.columns):
+            if not (col in ignore or re.findall('trend|seasonal|resid', col)):
+                res = STL(group[col], period=60).fit()
+                total_decompose_col[f'trend_{col}'][indices] = res.trend.values
+                total_decompose_col[f'seasonal_{col}'][indices] = res.seasonal.values
+                total_decompose_col[f'resid_{col}'][indices] = res.resid.values
+                
+    new_total = pd.concat([total, pd.DataFrame(total_decompose_col)], axis=1)
+    new_total.to_csv("sequential_total.csv", index=False)
+    
+    return new_total
+
+def forward_stepwise_regression(x_train, y_train):
+
+    # 변수목록, 선택된 변수 목록, 단계별 모델과 AIC 저장소 정의
+    features = list(x_train)
+    selected = []
+    step_df = pd.DataFrame({ 'step':[], 'feature':[],'aic':[]})
+
+    # 
+    for s in tqdm(range(0, len(features))) :
+        result =  { 'step':[], 'feature':[],'aic':[]}
+
+        # 변수 목록에서 변수 한개씩 뽑아서 모델에 추가
+        for f in features :
+            vars = selected + [f]
+            x_tr = x_train[vars]
+            model = sm.OLS(y_train, x_tr).fit()
+            result['step'].append(s+1)
+            result['feature'].append(vars)
+            result['aic'].append(model.aic)
+        
+        # 모델별 aic 집계
+        temp = pd.DataFrame(result).sort_values('aic').reset_index(drop = True)
+        
+        # 만약 이전 aic보다 새로운 aic 가 크다면 멈추기
+        if step_df['aic'].min() < temp['aic'].min() :
+            break
+        step_df = pd.concat([step_df, temp], axis = 0).reset_index(drop = True)
+
+        # 선택된 변수 제거
+        v = temp.loc[0,'feature'][s]
+        features.remove(v)
+
+        selected.append(v)
+    print(f"[Forward Selection] Remove : {set(x_train.columns) - set(features)}")
+    
+    # 선택된 변수와 step_df 결과 반환
+    return selected, step_df
