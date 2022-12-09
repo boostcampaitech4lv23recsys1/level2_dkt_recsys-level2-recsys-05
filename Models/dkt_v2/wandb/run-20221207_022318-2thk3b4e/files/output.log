@@ -1,0 +1,24 @@
+
+Start Training: Epoch 1
+Traceback (most recent call last):
+  File "train.py", line 31, in <module>
+    main(args)
+  File "train.py", line 25, in main
+    trainer.run(args, train_data, valid_data, model)
+  File "/opt/ml/input/recsys-05/dkt_v2/src/trainer.py", line 36, in run
+    train_auc, train_acc, train_loss = train(
+  File "/opt/ml/input/recsys-05/dkt_v2/src/trainer.py", line 106, in train
+    preds = model(input[:-1])
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/ml/input/recsys-05/dkt_v2/src/model.py", line 387, in forward
+    embed = self.comb_proj(embed)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (272x128 and 90x64)
