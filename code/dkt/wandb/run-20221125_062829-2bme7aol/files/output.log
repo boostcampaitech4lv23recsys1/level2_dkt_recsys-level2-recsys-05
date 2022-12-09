@@ -1,0 +1,70 @@
+Start Training: Epoch 1
+> /opt/ml/input/code/dkt/src/trainer.py(86)train()
+-> input = list(map(lambda t: t.to(args.device), process_batch(batch)))
+(tensor([[ 761.,  761.,  761.,  ...,  346.,  346.,  346.],
+        [ 917.,  917.,  917.,  ...,  363.,  363.,  363.],
+        [ 775.,  775.,  781.,  ...,  135.,  135.,  135.],
+        ...,
+        [1308., 1308., 1308.,  ..., 1312., 1312., 1312.],
+        [ 926.,  926.,  926.,  ...,  924.,  924.,  924.],
+        [ 562.,  562.,  562.,  ...,  568.,  568.,  568.]]), tensor([[3974., 3975., 3976.,  ..., 1790., 1791., 1792.],
+        [4985., 4986., 4987.,  ..., 1881., 1882., 1883.],
+        [4055., 4056., 4084.,  ...,  693.,  694.,  695.],
+        ...,
+        [7762., 7763., 7757.,  ..., 7794., 7795., 7796.],
+        [5047., 5048., 5049.,  ..., 5034., 5035., 5036.],
+        [2935., 2936., 2937.,  ..., 2964., 2965., 2966.]]), tensor([[232., 232., 232.,  ..., 749., 749., 749.],
+        [364., 364., 486.,  ..., 755., 755., 755.],
+        [237., 237., 238.,  ..., 588., 588., 588.],
+        ...,
+        [849., 847., 846.,  ..., 843., 845., 694.],
+        [366., 366., 366.,  ..., 374., 374., 374.],
+        [169., 169., 169.,  ..., 171., 171., 171.]]), tensor([[1., 1., 0.,  ..., 1., 0., 1.],
+        [0., 1., 0.,  ..., 1., 0., 0.],
+        [1., 0., 1.,  ..., 1., 0., 1.],
+        ...,
+        [1., 1., 1.,  ..., 0., 1., 1.],
+        [1., 1., 1.,  ..., 1., 1., 1.],
+        [1., 1., 1.,  ..., 1., 1., 1.]]), tensor([[1., 1., 1.,  ..., 1., 1., 1.],
+        [1., 1., 1.,  ..., 1., 1., 1.],
+        [1., 1., 1.,  ..., 1., 1., 1.],
+        ...,
+        [1., 1., 1.,  ..., 1., 1., 1.],
+        [1., 1., 1.,  ..., 1., 1., 1.],
+        [1., 1., 1.,  ..., 1., 1., 1.]]))
+tensor([[ 761.,  761.,  761.,  ...,  346.,  346.,  346.],
+        [ 917.,  917.,  917.,  ...,  363.,  363.,  363.],
+        [ 775.,  775.,  781.,  ...,  135.,  135.,  135.],
+        ...,
+        [1308., 1308., 1308.,  ..., 1312., 1312., 1312.],
+        [ 926.,  926.,  926.,  ...,  924.,  924.,  924.],
+        [ 562.,  562.,  562.,  ...,  568.,  568.,  568.]])
+torch.Size([64, 20])
+torch.Size([64, 20])
+torch.Size([64, 20])
+torch.Size([64, 20])
+torch.Size([64, 20])
+*** IndexError: tuple index out of range
+tensor([[1., 1., 0.,  ..., 1., 0., 1.],
+        [0., 1., 0.,  ..., 1., 0., 0.],
+        [1., 0., 1.,  ..., 1., 0., 1.],
+        ...,
+        [1., 1., 1.,  ..., 0., 1., 1.],
+        [1., 1., 1.,  ..., 1., 1., 1.],
+        [1., 1., 1.,  ..., 1., 1., 1.]])
+Traceback (most recent call last):
+  File "train.py", line 31, in <module>
+    main(args)
+  File "train.py", line 25, in main
+    trainer.run(args, train_data, valid_data, model)
+  File "/opt/ml/input/code/dkt/src/trainer.py", line 34, in run
+    train_auc, train_acc, train_loss = train(
+  File "/opt/ml/input/code/dkt/src/trainer.py", line 86, in train
+    input = list(map(lambda t: t.to(args.device), process_batch(batch)))
+  File "/opt/ml/input/code/dkt/src/trainer.py", line 86, in train
+    input = list(map(lambda t: t.to(args.device), process_batch(batch)))
+  File "/opt/conda/envs/dkt/lib/python3.8/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/conda/envs/dkt/lib/python3.8/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit

@@ -1,0 +1,13 @@
+cuda
+2022-11-21 14:18:19,078 - root - INFO - Task Started
+2022-11-21 14:18:19,078 - root - INFO - [1/1] Data Preparing - Start
+Traceback (most recent call last):
+  File "train2.py", line 65, in <module>
+    main()
+  File "train2.py", line 24, in main
+    train_data, valid_data, test_data, n_node, feature_input_dims = prepare_dataset(
+  File "/opt/ml/input/code/lightgcn/lightgcn/datasets2.py", line 14, in prepare_dataset
+    train_data_proc, valid_data_proc = train_valid_split(train_data_proc, ratio)
+  File "/opt/ml/input/code/lightgcn/lightgcn/datasets2.py", line 87, in train_valid_split
+    train_data = dict(edge=edge[:, train_idx], label=label[train_idx], feature=feature[:,train_idx])
+IndexError: too many indices for tensor of dimension 1

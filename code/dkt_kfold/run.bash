@@ -1,0 +1,1 @@
+python train_kfold.py --model bert --model_name bert_full

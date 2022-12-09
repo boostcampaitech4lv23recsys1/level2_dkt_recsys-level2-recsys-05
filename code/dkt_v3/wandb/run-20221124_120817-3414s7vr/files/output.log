@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "train.py", line 31, in <module>
+    main(args)
+  File "train.py", line 24, in main
+    model = trainer.get_model(args).to(args.device)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 987, in to
+    return self._apply(convert)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 639, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 662, in _apply
+    param_applied = fn(param)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 985, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+KeyboardInterrupt

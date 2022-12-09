@@ -1,0 +1,505 @@
+2022-12-01 12:15:53,797 INFO    StreamThr :12507 [internal.py:wandb_internal():88] W&B internal server running at pid: 12507, started at: 2022-12-01 12:15:53.796442
+2022-12-01 12:15:53,799 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: status
+2022-12-01 12:15:53,801 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: status
+2022-12-01 12:15:53,802 DEBUG   SenderThread:12507 [sender.py:send():303] send: header
+2022-12-01 12:15:53,802 INFO    WriterThread:12507 [datastore.py:open_for_write():75] open: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/run-sz9uasx8.wandb
+2022-12-01 12:15:53,803 DEBUG   SenderThread:12507 [sender.py:send():303] send: run
+2022-12-01 12:15:54,264 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: check_version
+2022-12-01 12:15:54,264 INFO    SenderThread:12507 [dir_watcher.py:__init__():216] watching files in: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files
+2022-12-01 12:15:54,264 INFO    SenderThread:12507 [sender.py:_start_run_threads():928] run started: sz9uasx8 with start time 1669896953.784796
+2022-12-01 12:15:54,264 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:15:54,265 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:15:54,265 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: check_version
+2022-12-01 12:15:54,343 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: run_start
+2022-12-01 12:15:54,347 DEBUG   HandlerThread:12507 [system_info.py:__init__():31] System info init
+2022-12-01 12:15:54,347 DEBUG   HandlerThread:12507 [system_info.py:__init__():46] System info init done
+2022-12-01 12:15:54,347 INFO    HandlerThread:12507 [system_monitor.py:start():150] Starting system monitor
+2022-12-01 12:15:54,347 INFO    SystemMonitor:12507 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-01 12:15:54,347 INFO    HandlerThread:12507 [system_monitor.py:probe():168] Collecting system info
+2022-12-01 12:15:54,347 INFO    SystemMonitor:12507 [interfaces.py:start():168] Started cpu
+2022-12-01 12:15:54,350 INFO    SystemMonitor:12507 [interfaces.py:start():168] Started disk
+2022-12-01 12:15:54,350 INFO    SystemMonitor:12507 [interfaces.py:start():168] Started gpu
+2022-12-01 12:15:54,351 INFO    SystemMonitor:12507 [interfaces.py:start():168] Started memory
+2022-12-01 12:15:54,358 INFO    SystemMonitor:12507 [interfaces.py:start():168] Started network
+2022-12-01 12:15:54,359 DEBUG   HandlerThread:12507 [system_info.py:probe():195] Probing system
+2022-12-01 12:15:54,367 DEBUG   HandlerThread:12507 [git.py:repo():40] git repository is invalid
+2022-12-01 12:15:54,367 DEBUG   HandlerThread:12507 [system_info.py:probe():241] Probing system done
+2022-12-01 12:15:54,367 DEBUG   HandlerThread:12507 [system_monitor.py:probe():177] {'os': 'Linux-4.4.0-59-generic-x86_64-with-glibc2.17', 'python': '3.8.15', 'heartbeatAt': '2022-12-01T12:15:54.359396', 'startedAt': '2022-12-01T12:15:53.772081', 'docker': None, 'cuda': None, 'args': ('--batch_size=256', '--embed_dim=16', '--hidden_dim=256', '--lr=1e-05', '--max_seq_len=15', '--model=lstm', '--n_epochs=100', '--n_layers=1', '--patience=10'), 'state': 'running', 'program': 'train.py', 'codePath': 'train.py', 'host': '5f52ecfe9bd1', 'username': 'root', 'executable': '/opt/conda/envs/dkt/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2200.096, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2200.096, 'min': 0.0, 'max': 0.0}, {'current': 2200.096, 'min': 0.0, 'max': 0.0}, {'current': 2200.096, 'min': 0.0, 'max': 0.0}, {'current': 2200.096, 'min': 0.0, 'max': 0.0}, {'current': 2200.096, 'min': 0.0, 'max': 0.0}, {'current': 2200.096, 'min': 0.0, 'max': 0.0}, {'current': 2200.096, 'min': 0.0, 'max': 0.0}, {'current': 2200.096, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 98.30496215820312, 'used': 47.51316452026367}, 'gpu': 'Tesla V100-SXM2-32GB', 'gpu_count': 1, 'gpu_devices': [{'name': 'Tesla V100-SXM2-32GB', 'memory_total': 34089730048}], 'memory': {'total': 88.4907455444336}}
+2022-12-01 12:15:54,367 INFO    HandlerThread:12507 [system_monitor.py:probe():178] Finished collecting system info
+2022-12-01 12:15:54,367 INFO    HandlerThread:12507 [system_monitor.py:probe():181] Publishing system info
+2022-12-01 12:15:54,367 DEBUG   HandlerThread:12507 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2022-12-01 12:15:54,367 DEBUG   HandlerThread:12507 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-01 12:15:54,368 DEBUG   HandlerThread:12507 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2022-12-01 12:15:55,265 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_created():275] file/dir created: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:15:55,266 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_created():275] file/dir created: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/conda-environment.yaml
+2022-12-01 12:15:55,266 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_created():275] file/dir created: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/requirements.txt
+2022-12-01 12:15:58,088 DEBUG   HandlerThread:12507 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-01 12:15:58,089 INFO    HandlerThread:12507 [system_monitor.py:probe():183] Finished publishing system info
+2022-12-01 12:15:58,092 DEBUG   SenderThread:12507 [sender.py:send():303] send: files
+2022-12-01 12:15:58,092 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-01 12:15:58,098 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:15:58,098 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:15:58,265 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/conda-environment.yaml
+2022-12-01 12:15:58,265 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_created():275] file/dir created: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-metadata.json
+2022-12-01 12:15:58,301 DEBUG   SenderThread:12507 [sender.py:send():303] send: telemetry
+2022-12-01 12:15:58,814 INFO    Thread-16 :12507 [upload_job.py:push():143] Uploaded file /tmp/tmpwe3o94xywandb/5nngfchv-wandb-metadata.json
+2022-12-01 12:16:04,267 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_created():275] file/dir created: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:16:06,268 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:16:13,303 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:16:13,304 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:16:14,457 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:16:14,458 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:16:14,458 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:16:14,460 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:16:15,276 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:16:16,276 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:16:24,999 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:16:25,000 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:16:25,000 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:16:25,002 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:16:25,280 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:16:25,281 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/config.yaml
+2022-12-01 12:16:26,281 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:16:28,282 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:16:28,511 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:16:28,511 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:16:35,559 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:16:35,560 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:16:35,560 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:16:35,562 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:16:36,285 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:16:38,287 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:16:43,717 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:16:43,717 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:16:46,288 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:16:46,288 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:16:46,289 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:16:46,291 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:16:46,292 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:16:48,293 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:16:54,358 DEBUG   SystemMonitor:12507 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-01 12:16:54,360 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:16:57,272 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:16:57,273 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:16:57,273 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:16:57,273 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:16:57,299 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:16:58,300 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:16:58,924 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:16:58,924 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:17:00,301 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:17:07,861 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:17:07,862 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:17:07,862 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:17:07,863 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:17:08,305 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:17:10,306 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:17:14,133 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:17:14,134 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:17:18,894 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:17:18,895 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:17:18,895 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:17:18,896 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:17:19,309 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:17:20,310 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:17:24,360 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:17:29,318 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:17:29,318 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:17:29,318 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:17:29,319 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:17:29,387 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:17:29,387 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:17:30,313 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:17:30,313 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:17:32,314 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:17:40,080 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:17:40,081 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:17:40,081 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:17:40,083 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:17:40,319 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:17:42,319 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:17:44,590 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:17:44,590 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:17:50,849 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:17:50,850 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:17:50,851 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:17:50,852 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:17:51,323 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:17:52,323 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:17:54,360 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:17:59,796 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:17:59,796 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:18:01,571 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:18:01,571 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:18:01,572 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:18:01,574 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:18:02,327 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:18:04,327 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:18:12,705 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:18:12,705 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:18:12,706 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:18:12,708 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:18:13,330 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:18:14,331 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:18:14,999 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:18:14,999 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:18:23,516 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:18:23,517 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:18:23,517 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:18:23,518 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:18:24,335 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:18:24,361 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:18:26,335 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:18:30,204 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:18:30,204 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:18:34,198 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:18:34,199 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:18:34,199 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:18:34,201 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:18:34,338 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:18:36,339 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:18:44,950 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:18:44,950 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:18:44,950 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:18:44,952 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:18:45,342 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:18:45,413 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:18:45,413 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:18:46,343 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:18:54,361 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:18:55,895 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:18:55,896 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:18:55,896 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:18:55,898 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:18:56,346 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:18:58,347 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:19:00,692 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:19:00,692 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:19:06,784 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:19:06,785 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:19:06,785 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:19:06,787 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:19:07,350 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:19:08,350 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:19:15,898 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:19:15,898 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:19:18,189 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:19:18,190 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:19:18,190 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:19:18,191 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:19:18,354 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:19:20,354 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:19:24,362 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:19:29,577 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:19:29,578 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:19:29,578 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:19:29,580 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:19:30,358 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:19:31,104 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:19:31,104 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:19:32,359 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:19:40,652 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:19:40,653 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:19:40,653 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:19:40,655 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:19:41,365 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:19:42,365 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:19:46,313 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:19:46,313 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:19:51,422 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:19:51,422 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:19:51,423 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:19:51,425 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:19:52,369 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:19:52,369 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:19:54,363 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:19:54,369 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:20:01,519 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:20:01,520 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:20:02,159 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:20:02,159 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:20:02,159 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:20:02,160 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:20:02,375 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:20:04,376 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:20:13,354 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:20:13,355 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:20:13,355 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:20:13,357 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:20:13,379 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:20:14,379 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:20:16,380 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:20:16,735 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:20:16,735 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:20:24,217 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:20:24,217 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:20:24,218 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:20:24,219 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:20:24,363 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:20:24,383 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:20:26,384 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:20:31,938 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:20:31,939 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:20:34,880 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:20:34,881 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:20:34,881 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:20:34,883 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:20:35,387 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:20:36,387 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:20:45,399 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:20:45,399 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:20:45,400 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:20:45,402 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:20:46,391 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:20:46,391 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:20:47,150 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:20:47,150 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:20:48,391 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:20:54,364 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:20:55,812 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:20:55,812 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:20:55,813 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:20:55,813 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:20:56,394 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:20:58,395 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:21:02,352 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:21:02,353 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:21:06,598 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:21:06,598 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:21:06,599 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:21:06,599 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:21:07,398 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:21:08,398 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:21:17,203 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:21:17,204 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:21:17,204 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:21:17,204 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:21:17,402 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:21:17,560 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:21:17,560 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:21:18,402 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:21:24,364 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:21:28,029 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:21:28,029 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:21:28,030 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:21:28,030 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:21:28,406 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:21:30,406 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:21:32,766 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:21:32,767 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:21:38,675 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:21:38,676 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:21:38,676 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:21:38,676 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:21:39,415 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:21:40,415 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:21:47,968 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:21:47,968 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:21:49,303 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:21:49,304 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:21:49,304 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:21:49,304 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:21:49,418 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:21:50,419 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:21:52,420 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:21:54,365 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:22:00,036 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:22:00,037 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:22:00,037 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:22:00,037 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:22:00,422 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:22:02,423 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:22:03,169 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:22:03,169 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:22:10,308 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:22:10,309 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:22:10,310 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:22:10,310 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:22:10,428 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:22:12,429 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:22:18,369 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:22:18,370 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:22:20,916 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:22:20,917 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:22:20,917 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:22:20,919 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:22:21,432 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:22:22,433 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:22:24,366 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:22:31,792 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:22:31,793 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:22:31,793 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:22:31,793 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:22:32,436 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:22:33,572 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:22:33,572 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:22:34,437 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:22:42,778 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:22:42,778 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:22:42,778 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:22:42,779 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:22:43,440 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:22:44,440 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:22:48,782 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:22:48,782 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:22:53,811 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:22:53,812 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:22:53,812 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:22:53,814 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:22:54,366 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:22:54,444 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:22:56,445 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:23:04,015 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:23:04,015 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:23:04,339 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:23:04,339 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:23:04,339 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:23:04,340 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:23:04,449 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:23:06,450 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:23:15,020 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:23:15,021 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:23:15,021 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:23:15,021 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:23:15,453 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:23:16,454 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:23:19,221 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:23:19,221 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:23:24,368 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:23:25,975 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:23:25,976 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:23:25,976 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:23:25,976 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:23:26,457 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:23:28,458 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:23:34,426 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-01 12:23:34,427 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: stop_status
+2022-12-01 12:23:36,993 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:23:36,994 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:23:36,994 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:23:36,995 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:23:36,995 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-01 12:23:36,996 DEBUG   SenderThread:12507 [sender.py:send():303] send: history
+2022-12-01 12:23:36,996 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:23:36,997 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:23:37,156 DEBUG   SenderThread:12507 [sender.py:send():303] send: exit
+2022-12-01 12:23:37,156 INFO    SenderThread:12507 [sender.py:send_exit():442] handling exit code: 0
+2022-12-01 12:23:37,156 INFO    SenderThread:12507 [sender.py:send_exit():444] handling runtime: 462
+2022-12-01 12:23:37,156 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:23:37,156 INFO    SenderThread:12507 [sender.py:send_exit():450] send defer
+2022-12-01 12:23:37,157 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:37,157 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 0
+2022-12-01 12:23:37,157 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:37,157 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-12-01 12:23:37,157 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 1
+2022-12-01 12:23:37,157 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:37,157 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 1
+2022-12-01 12:23:37,158 INFO    HandlerThread:12507 [system_monitor.py:finish():160] Stopping system monitor
+2022-12-01 12:23:37,159 INFO    HandlerThread:12507 [interfaces.py:finish():173] Joined cpu
+2022-12-01 12:23:37,159 INFO    HandlerThread:12507 [interfaces.py:finish():173] Joined disk
+2022-12-01 12:23:37,159 DEBUG   SystemMonitor:12507 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-12-01 12:23:37,159 DEBUG   SystemMonitor:12507 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-12-01 12:23:37,168 INFO    HandlerThread:12507 [interfaces.py:finish():173] Joined gpu
+2022-12-01 12:23:37,168 INFO    HandlerThread:12507 [interfaces.py:finish():173] Joined memory
+2022-12-01 12:23:37,168 INFO    HandlerThread:12507 [interfaces.py:finish():173] Joined network
+2022-12-01 12:23:37,168 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:37,168 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-12-01 12:23:37,168 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 2
+2022-12-01 12:23:37,169 DEBUG   SenderThread:12507 [sender.py:send():303] send: stats
+2022-12-01 12:23:37,169 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:37,169 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 2
+2022-12-01 12:23:37,170 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:37,170 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-12-01 12:23:37,170 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 3
+2022-12-01 12:23:37,170 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:37,170 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 3
+2022-12-01 12:23:37,170 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:37,170 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-12-01 12:23:37,170 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 4
+2022-12-01 12:23:37,170 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:37,170 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 4
+2022-12-01 12:23:37,171 DEBUG   SenderThread:12507 [sender.py:send():303] send: summary
+2022-12-01 12:23:37,171 INFO    SenderThread:12507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-01 12:23:37,171 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:37,171 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-12-01 12:23:37,171 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 5
+2022-12-01 12:23:37,172 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:37,172 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 5
+2022-12-01 12:23:37,172 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:37,172 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-12-01 12:23:37,172 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 6
+2022-12-01 12:23:37,172 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:37,172 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 6
+2022-12-01 12:23:37,172 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:37,173 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-12-01 12:23:37,461 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:23:37,814 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 7
+2022-12-01 12:23:37,814 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:37,815 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 7
+2022-12-01 12:23:37,815 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:37,815 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-12-01 12:23:37,815 INFO    SenderThread:12507 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-01 12:23:38,156 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-01 12:23:38,462 INFO    Thread-13 :12507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:23:38,462 INFO    SenderThread:12507 [dir_watcher.py:finish():392] scan: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files
+2022-12-01 12:23:38,462 INFO    SenderThread:12507 [dir_watcher.py:finish():406] scan save: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/conda-environment.yaml conda-environment.yaml
+2022-12-01 12:23:38,462 INFO    SenderThread:12507 [dir_watcher.py:finish():406] scan save: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/config.yaml config.yaml
+2022-12-01 12:23:38,463 INFO    SenderThread:12507 [dir_watcher.py:finish():406] scan save: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log output.log
+2022-12-01 12:23:38,466 INFO    SenderThread:12507 [dir_watcher.py:finish():406] scan save: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-metadata.json wandb-metadata.json
+2022-12-01 12:23:38,466 INFO    SenderThread:12507 [dir_watcher.py:finish():406] scan save: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json wandb-summary.json
+2022-12-01 12:23:38,472 INFO    SenderThread:12507 [dir_watcher.py:finish():406] scan save: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/requirements.txt requirements.txt
+2022-12-01 12:23:38,472 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 8
+2022-12-01 12:23:38,472 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: poll_exit
+2022-12-01 12:23:38,481 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:38,481 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 8
+2022-12-01 12:23:38,484 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:38,484 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-12-01 12:23:38,484 INFO    SenderThread:12507 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-01 12:23:39,148 INFO    Thread-18 :12507 [upload_job.py:push():143] Uploaded file /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/config.yaml
+2022-12-01 12:23:39,157 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-01 12:23:39,157 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: poll_exit
+2022-12-01 12:23:39,163 INFO    Thread-20 :12507 [upload_job.py:push():143] Uploaded file /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/wandb-summary.json
+2022-12-01 12:23:39,165 INFO    Thread-17 :12507 [upload_job.py:push():143] Uploaded file /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/conda-environment.yaml
+2022-12-01 12:23:39,188 INFO    Thread-19 :12507 [upload_job.py:push():143] Uploaded file /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/output.log
+2022-12-01 12:23:39,204 INFO    Thread-21 :12507 [upload_job.py:push():143] Uploaded file /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/files/requirements.txt
+2022-12-01 12:23:39,404 INFO    Thread-12 :12507 [sender.py:transition_state():463] send defer: 9
+2022-12-01 12:23:39,405 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:39,405 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 9
+2022-12-01 12:23:39,405 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:39,405 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-12-01 12:23:39,405 INFO    SenderThread:12507 [file_pusher.py:join():173] waiting for file pusher
+2022-12-01 12:23:39,405 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 10
+2022-12-01 12:23:39,406 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:39,406 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 10
+2022-12-01 12:23:39,406 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:39,406 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-12-01 12:23:40,021 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 11
+2022-12-01 12:23:40,022 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:40,022 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 11
+2022-12-01 12:23:40,022 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:40,022 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-12-01 12:23:40,022 INFO    SenderThread:12507 [sender.py:transition_state():463] send defer: 12
+2022-12-01 12:23:40,023 DEBUG   SenderThread:12507 [sender.py:send():303] send: final
+2022-12-01 12:23:40,023 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: defer
+2022-12-01 12:23:40,023 DEBUG   SenderThread:12507 [sender.py:send():303] send: footer
+2022-12-01 12:23:40,024 INFO    HandlerThread:12507 [handler.py:handle_request_defer():162] handle defer: 12
+2022-12-01 12:23:40,024 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: defer
+2022-12-01 12:23:40,024 INFO    SenderThread:12507 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-12-01 12:23:40,026 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-01 12:23:40,026 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-01 12:23:40,026 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: server_info
+2022-12-01 12:23:40,026 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: get_summary
+2022-12-01 12:23:40,026 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: poll_exit
+2022-12-01 12:23:40,027 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: sampled_history
+2022-12-01 12:23:40,027 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: poll_exit
+2022-12-01 12:23:40,028 DEBUG   SenderThread:12507 [sender.py:send_request():317] send_request: server_info
+2022-12-01 12:23:42,587 INFO    MainThread:12507 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2022-12-01 12:23:42,588 INFO    MainThread:12507 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2022-12-01 12:23:42,589 INFO    MainThread:12507 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2022-12-01 12:23:42,589 DEBUG   HandlerThread:12507 [handler.py:handle_request():139] handle_request: shutdown
+2022-12-01 12:23:42,589 INFO    HandlerThread:12507 [handler.py:finish():814] shutting down handler
+2022-12-01 12:23:43,023 INFO    WriterThread:12507 [datastore.py:close():279] close: /opt/ml/input/code/dkt_v3/wandb/run-20221201_121553-sz9uasx8/run-sz9uasx8.wandb
+2022-12-01 12:23:43,587 INFO    SenderThread:12507 [sender.py:finish():1331] shutting down sender
+2022-12-01 12:23:43,588 INFO    SenderThread:12507 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-01 12:23:43,588 INFO    SenderThread:12507 [file_pusher.py:join():173] waiting for file pusher
+2022-12-01 12:23:43,592 INFO    MainThread:12507 [internal.py:handle_exit():78] Internal process exited

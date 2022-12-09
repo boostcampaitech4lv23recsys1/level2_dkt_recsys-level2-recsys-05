@@ -1,0 +1,15 @@
+Start Training: Epoch 1
+Traceback (most recent call last):
+  File "train.py", line 31, in <module>
+    main(args)
+  File "train.py", line 25, in main
+    trainer.run(args, train_data, valid_data, model)
+  File "/opt/ml/input/code/dkt_v3/src/trainer.py", line 36, in run
+    train_auc, train_acc, train_loss = train(
+  File "/opt/ml/input/code/dkt_v3/src/trainer.py", line 93, in train
+    update_params(loss, model, optimizer, scheduler, args)
+  File "/opt/ml/input/code/dkt_v3/src/trainer.py", line 205, in update_params
+    torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip_grad)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/utils/clip_grad.py", line 56, in clip_grad_norm_
+    g.detach().mul_(clip_coef_clamped.to(g.device))
+KeyboardInterrupt

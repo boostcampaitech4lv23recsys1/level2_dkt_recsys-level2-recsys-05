@@ -1,0 +1,13 @@
+Start Training: Epoch 1
+Traceback (most recent call last):
+  File "train.py", line 31, in <module>
+    main(args)
+  File "train.py", line 25, in main
+    trainer.run(args, train_data, valid_data, model)
+  File "/opt/ml/input/code/dkt_v3/src/trainer.py", line 36, in run
+    train_auc, train_acc, train_loss = train(
+  File "/opt/ml/input/code/dkt_v3/src/trainer.py", line 92, in train
+    loss = compute_loss(preds[:, -1], targets[:, -1])
+  File "/opt/ml/input/code/dkt_v3/src/trainer.py", line 198, in compute_loss
+    loss = loss[:, -1]
+IndexError: too many indices for tensor of dimension 1

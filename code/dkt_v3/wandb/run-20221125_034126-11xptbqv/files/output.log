@@ -1,0 +1,20 @@
+
+Start Training: Epoch 1
+Traceback (most recent call last):
+  File "train.py", line 31, in <module>
+    main(args)
+  File "train.py", line 25, in main
+    trainer.run(args, train_data, valid_data, model)
+  File "/opt/ml/input/code/dkt_v2/src/trainer.py", line 36, in run
+    train_auc, train_acc, train_loss = train(
+  File "/opt/ml/input/code/dkt_v2/src/trainer.py", line 90, in train
+    preds = model(input[:-1])
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/ml/input/code/dkt_v2/src/model.py", line 153, in forward
+    out, _ = self.lstm(seq_emb) # (batch size) x (max_seq_length) x (hidden_dim)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/nn/modules/rnn.py", line 774, in forward
+    result = _VF.lstm(input, hx, self._flat_weights, self.bias, self.num_layers,
+RuntimeError: cuDNN error: CUDNN_STATUS_INTERNAL_ERROR

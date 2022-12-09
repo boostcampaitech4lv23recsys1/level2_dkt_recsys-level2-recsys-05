@@ -1,0 +1,40 @@
+2022-11-29 05:42:10,304 INFO    Thread-8  :80491 [wandb_setup.py:_flush():68] Configure stats pid to 80491
+2022-11-29 05:42:10,304 INFO    Thread-8  :80491 [wandb_setup.py:_flush():68] Loading settings from /opt/ml/.config/wandb/settings
+2022-11-29 05:42:10,304 INFO    Thread-8  :80491 [wandb_setup.py:_flush():68] Loading settings from /opt/ml/input/code/dkt_v3/wandb/settings
+2022-11-29 05:42:10,305 INFO    Thread-8  :80491 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True', 'project': 'sweep_tutorial', 'entity': 'minsukang', 'root_dir': '/opt/ml/input/code/dkt_v3', 'run_id': 'rq0isn7t', 'sweep_param_path': '/opt/ml/input/code/dkt_v3/wandb/sweep-pgoagi3c/config-rq0isn7t.yaml', 'sweep_id': 'pgoagi3c'}
+2022-11-29 05:42:10,305 INFO    Thread-8  :80491 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'sweep.py', 'program': 'sweep.py'}
+2022-11-29 05:42:10,305 INFO    Thread-8  :80491 [wandb_init.py:_log_setup():476] Logging user logs to /opt/ml/input/code/dkt_v3/wandb/run-20221129_054210-rq0isn7t/logs/debug.log
+2022-11-29 05:42:10,305 INFO    Thread-8  :80491 [wandb_init.py:_log_setup():477] Logging internal logs to /opt/ml/input/code/dkt_v3/wandb/run-20221129_054210-rq0isn7t/logs/debug-internal.log
+2022-11-29 05:42:10,305 INFO    Thread-8  :80491 [wandb_init.py:init():516] calling init triggers
+2022-11-29 05:42:10,305 INFO    Thread-8  :80491 [wandb_init.py:init():519] wandb.init called with sweep_config: {'batch_size': 52, 'dropout': 0.4, 'embed_dim': 56, 'hidden_dim': 67, 'lr': 0.02463409684457335, 'max_seq_len': 30, 'n_epochs': 26, 'n_layers': 3, 'optimizer': 'adamW', 'scheduler': 'plateau'}
+config: {}
+2022-11-29 05:42:10,305 INFO    Thread-8  :80491 [wandb_init.py:init():569] starting backend
+2022-11-29 05:42:10,305 INFO    Thread-8  :80491 [wandb_init.py:init():573] setting up manager
+2022-11-29 05:42:10,309 INFO    Thread-8  :80491 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-11-29 05:42:10,314 INFO    Thread-8  :80491 [wandb_init.py:init():580] backend started and connected
+2022-11-29 05:42:10,318 INFO    Thread-8  :80491 [wandb_run.py:_config_callback():1160] config_cb None None {'batch_size': 52, 'dropout': 0.4, 'embed_dim': 56, 'hidden_dim': 67, 'lr': 0.02463409684457335, 'max_seq_len': 30, 'n_epochs': 26, 'n_layers': 3, 'optimizer': 'adamW', 'scheduler': 'plateau'}
+2022-11-29 05:42:10,320 INFO    Thread-8  :80491 [wandb_init.py:init():658] updated telemetry
+2022-11-29 05:42:10,321 INFO    Thread-8  :80491 [wandb_init.py:init():693] communicating run to backend with 60 second timeout
+2022-11-29 05:42:10,777 INFO    Thread-8  :80491 [wandb_run.py:_on_init():2000] communicating current version
+2022-11-29 05:42:10,832 INFO    Thread-8  :80491 [wandb_run.py:_on_init():2004] got version response 
+2022-11-29 05:42:10,832 INFO    Thread-8  :80491 [wandb_init.py:init():728] starting run threads in backend
+2022-11-29 05:42:14,756 ERROR   Thread-8  :80491 [wandb_init.py:init():1105] error
+Traceback (most recent call last):
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 1078, in init
+    run = wi.init()
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 739, in init
+    _ = backend.interface.communicate_run_start(run_obj)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 235, in communicate_run_start
+    result = self._communicate_run_start(run_start)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 484, in _communicate_run_start
+    result = self._communicate(rec)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/wandb/sdk/interface/interface_shared.py", line 255, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/wandb/sdk/interface/router.py", line 36, in get
+    is_set = self._object_ready.wait(timeout)
+  File "/opt/conda/envs/dkt/lib/python3.8/threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "/opt/conda/envs/dkt/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+Exception
+2022-11-29 05:42:20,820 WARNING MsgRouterThr:80491 [router.py:message_loop():77] message_loop has been closed

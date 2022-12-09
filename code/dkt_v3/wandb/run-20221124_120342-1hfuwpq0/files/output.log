@@ -1,0 +1,82 @@
+
+Start Training: Epoch 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 26%|██▋       | 6155/23253 [02:09<06:00, 47.42it/s]
+Traceback (most recent call last):
+  File "train.py", line 31, in <module>
+    main(args)
+  File "train.py", line 25, in main
+    trainer.run(args, train_data, valid_data, model)
+  File "/opt/ml/input/code/dkt_v2/src/trainer.py", line 35, in run
+    train_auc, train_acc, train_loss = train(
+  File "/opt/ml/input/code/dkt_v2/src/trainer.py", line 91, in train
+    update_params(loss, model, optimizer, scheduler, args)
+  File "/opt/ml/input/code/dkt_v2/src/trainer.py", line 197, in update_params
+    loss.backward()
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/opt/conda/envs/dkt/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
