@@ -14,6 +14,8 @@ from .model import LSTM, LSTMATTN, Bert, LastQuery, Saint
 from .optimizer import get_optimizer
 from .scheduler import get_scheduler
 
+from pytorch_tabnet.multitask import TabNetMultiTaskClassifier
+
 
 def run(args, train_data, valid_data, model, kfold=''):
     print('-'*50)
@@ -103,6 +105,65 @@ def run(args, train_data, valid_data, model, kfold=''):
     # )
 
     return best_auc, best_acc
+
+def tabnet_run(args):
+    df = pd.read_csv('/opt/ml/input/data/train_feature_engineering.csv')
+    categorical_columns = ['userID', 'assessmentItemID', 'testId', 'KnowledgeTag', 'assessmentItemID_last', 'testId_first', 'testId_last']
+    categorical_dims =  {}
+    for col in tqdm(df.columns):
+        le = LabelEncoder()
+        df[col] = le.fit_transform(df[col].values)
+        categorical_dims[col] = len(le.classes_)
+
+    n = len(df['userID'].unique())
+    user_permute_list = np.random.permutation(df['userID'].unique())
+    train_userid = user_permute_list[:(int(n*ratio))]
+    valid_userid = user_permute_list[(int(n*ratio)):]
+    train = df[df['userID'].isin(train_userid)].reset_index(drop=True).sort_values(["userID", "Timestamp"])
+    valid = df[df['userID'].isin(valid_userid)].reset_index(drop=True).sort_values(["userID", "Timestamp"])
+
+    train_x = train.drop(['answerCode', 'Timestamp','relative_answered_correctly'], axis = 1)
+    train_y = train[['answerCode']]
+    valid_x = valid.drop(['answerCode', 'Timestamp', 'relative_answered_correctly'], axis = 1)
+    valid_y = valid[['answerCode']]
+
+    features = [ col for col in train_x.columns] 
+
+    cat_idxs = [ i for i, f in enumerate(features) if f in categorical_columns]
+
+    cat_dims = [ categorical_dims[f] for i, f in enumerate(features) if f in categorical_columns]
+
+    X_train = train_x[features].values
+    y_train = train_y.values
+    X_valid = valid_x[features].values
+    y_valid = valid_y.values
+
+    clf.fit(
+        X_train=X_train, y_train=y_train,
+        eval_set=[(X_train, y_train), (X_valid, y_valid)],
+        eval_name=['train', 'valid'],
+        eval_metric=['auc'],
+        max_epochs=max_epochs,
+        patience=30,
+        batch_size=14598,
+        virtual_batch_size=4430,
+        drop_last=False,
+    )
+
+    max_epochs = 53
+    clf.fit(
+        X_train=X_train, y_train=y_train,
+        eval_set=[(X_train, y_train), (X_valid, y_valid)],
+        eval_name=['train', 'valid'],
+        eval_metric=['auc'],
+        max_epochs=max_epochs,
+        patience=30,
+        batch_size=14598,
+        virtual_batch_size=4430,
+        drop_last=False,
+    )
+
+    clf.save_model('./tabnet_model')
 
 
 def train(train_loader, model, optimizer, scheduler, args):
@@ -210,6 +271,35 @@ def inference(args, test_data):
         w.write("id,prediction\n")
         for id, p in enumerate(kfold_preds):
             w.write("{},{}\n".format(id, p))
+
+def tabnet_inference(args):
+    test = pd.read_csv('/opt/ml/input/data/test_feature_engineering.csv')
+    md = TabNetMultiTaskClassifier(device_name='cpu')
+    md.load_model('./tabnet_model.zip')
+
+    test.pop('Timestamp')
+    test.pop('relative_answered_correctly')
+    test.pop('answerCode')
+
+    for col in tqdm(test.columns):
+        le = LabelEncoder()
+        test[col] = le.fit_transform(test[col].values)
+
+    test_data = test[test['userID'] != test['userID'].shift(-1)].to_numpy()
+    loaded_preds = md.predict_proba(test_data)
+    preds = loaded_preds[0][:, 1]
+
+    output_dir = './output'
+    write_path = os.path.join(output_dir, "tabnetmulti.csv")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)    
+    with open(write_path, 'w', encoding='utf8') as w:
+        print("writing prediction : {}".format(write_path))
+        w.write("id,prediction\n")
+        for id, p in enumerate(preds):
+            w.write('{},{}\n'.format(id,p))
+
+
 
 
 def get_model(args):
