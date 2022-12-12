@@ -26,7 +26,7 @@ def parse_args():
         "--model_dir", default="models/", type=str, help="model directory"
     )
     parser.add_argument(
-        "--model_name", default="model.pt", type=str, help="model file name"
+        "--model_name", default="model", type=str, help="model file name"
     )
 
     parser.add_argument(
@@ -38,13 +38,15 @@ def parse_args():
     parser.add_argument(
         "--test_file_name", default="test_feature_engineering.csv", type=str, help="test file name"
     )
+    parser.add_argument(
+        "--kfold", default=1, type=int, help="kfold"
+    )
 
     # 데이터
     parser.add_argument(
         "--cate_cols",
         default=[
-            'assessmentItemID', 'testId', 'KnowledgeTag',
-            'assessmentItemID_last', 'testId_first', 'testId_last'
+            'KnowledgeTag', 'assessmentItemID_last', 'testId_first', 'testId_last'
         ],
         type=list,
         help="categorical feature names"
@@ -52,12 +54,11 @@ def parse_args():
     parser.add_argument(
         "--cont_cols",
         default=[
-            'elapsed',
-            'accuracy_by_assessment', 'accuracy_by_test', 'accuracy_by_tag',
-            'accuracy_by_assessment_last', 'accuracy_by_test_first',
-            'accuracy_by_test_last', 
-            'prior_ac_count', 'prior_quest_count', 'prior_ac_accuracy',
-            'prior_relative_ac_sum', 'prior_relative_accuracy',
+            'elapsed', 'accuracy_by_assessment', 'accuracy_by_test',
+            'accuracy_by_tag', 'accuracy_by_assessment_last',
+            'accuracy_by_test_first', 'accuracy_by_test_last',
+            'prior_ac_count', 'prior_quest_count',
+            'prior_ac_accuracy', 'prior_relative_ac_sum', 'prior_relative_accuracy',
             'prior_assessment_frequency', 'prior_test_frequency',
             'prior_tags_frequency', 'diff_time_btw_tags', 'prev_tag_answer',
         ],
@@ -66,7 +67,7 @@ def parse_args():
     )
     # 
     parser.add_argument(
-        "--max_seq_len", default=20, type=int, help="max sequence length"
+        "--max_seq_len", default=7, type=int, help="max sequence length"
     )
     parser.add_argument(
         "--stride", default=20, type=int, help="stride"
@@ -75,21 +76,21 @@ def parse_args():
 
     # 모델
     parser.add_argument(
-        "--embed_dim", default=64, type=int, help="embedding dimension size"
+        "--embed_dim", default=16, type=int, help="embedding dimension size"
     )
     parser.add_argument(
-        "--hidden_dim", default=64, type=int, help="hidden dimension size"
+        "--hidden_dim", default=256, type=int, help="hidden dimension size"
     )
-    parser.add_argument("--n_layers", default=2, type=int, help="number of layers")
-    parser.add_argument("--n_heads", default=2, type=int, help="number of heads")
+    parser.add_argument("--n_layers", default=10, type=int, help="number of layers")
+    parser.add_argument("--n_heads", default=4, type=int, help="number of heads")
     parser.add_argument("--drop_out", default=0.2, type=float, help="drop out rate")
 
     # 훈련
-    parser.add_argument("--n_epochs", default=20, type=int, help="number of epochs")
-    parser.add_argument("--batch_size", default=64, type=int, help="batch size")
+    parser.add_argument("--n_epochs", default=100, type=int, help="number of epochs")
+    parser.add_argument("--batch_size", default=256, type=int, help="batch size")
     parser.add_argument("--lr", default=0.0001, type=float, help="learning rate")
     parser.add_argument("--clip_grad", default=10, type=int, help="clip grad")
-    parser.add_argument("--patience", default=5, type=int, help="for early stopping")
+    parser.add_argument("--patience", default=10, type=int, help="for early stopping")
 
     parser.add_argument(
         "--log_steps", default=50, type=int, help="print log per n steps"
