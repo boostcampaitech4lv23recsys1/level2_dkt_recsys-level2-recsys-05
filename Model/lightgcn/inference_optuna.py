@@ -3,9 +3,9 @@ import os
 import pandas as pd
 import numpy as np
 import torch
-from config import CFG, logging_conf
+from config_optuna import CFG, logging_conf
 from lightgcn.datasets import prepare_dataset
-from lightgcn.models import build, inference
+from lightgcn.models_optuna import build, inference
 from lightgcn.utils import get_logger
 
 logger = get_logger(logging_conf)

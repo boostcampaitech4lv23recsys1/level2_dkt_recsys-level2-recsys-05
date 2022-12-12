@@ -21,7 +21,7 @@ def main():
     logger.info("Task Started")
 
     logger.info("[1/1] Data Preparing - Start")
-    train_data, test_data, n_node = prepare_dataset(
+    train_data, test_data, valid_data, n_node = prepare_dataset(
         device, CFG.basepath, verbose=CFG.loader_verbose, logger=logger.getChild("data")
     )
     logger.info("[1/1] Data Preparing - Done")
@@ -43,9 +43,11 @@ def main():
     logger.info("[2/2] Model Building - Done")
 
     logger.info("[3/3] Model Training - Start")
+    
     train(
         model,
         train_data,
+        valid_data,
         n_epoch=CFG.n_epoch,
         learning_rate=CFG.learning_rate,
         use_wandb=CFG.user_wandb,

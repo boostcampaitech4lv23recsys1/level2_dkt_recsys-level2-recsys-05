@@ -33,7 +33,7 @@ def train(
     model.train()
 
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
-
+    
     if not os.path.exists(weight):
         os.makedirs(weight)
 
@@ -44,23 +44,24 @@ def train(
         label = label.to("cpu").detach().numpy()
         valid_data = dict(edge=edge[:, eids], label=label[eids])
 
+    # import pdb;pdb.set_trace();
     logger.info(f"Training Started : n_epoch={n_epoch}")
     best_auc, best_epoch = 0, -1
     for e in range(n_epoch):
         # forward
-        pred = model(train_data["edge"])
-        loss = model.link_pred_loss(pred, train_data["label"])
+        # import pdb;pdb.set_trace();
+        pred = model(train_data["train_edge"])
+        loss = model.link_pred_loss(pred, train_data["train_label"])
 
         # backward
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-
         with torch.no_grad():
-            prob = model.predict_link(valid_data["edge"], prob=True)
+            prob = model.predict_link(valid_data["valid_edge"], prob=True)
             prob = prob.detach().cpu().numpy()
-            acc = accuracy_score(valid_data["label"], prob > 0.5)
-            auc = roc_auc_score(valid_data["label"], prob)
+            acc = accuracy_score(valid_data["valid_label"], prob > 0.5)
+            auc = roc_auc_score(valid_data["valid_label"], prob)
             logger.info(
                 f" * In epoch {(e+1):04}, loss={loss:.03f}, acc={acc:.03f}, AUC={auc:.03f}"
             )
