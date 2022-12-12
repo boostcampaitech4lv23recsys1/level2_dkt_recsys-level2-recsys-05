@@ -7,8 +7,7 @@ class CFG:
     wandb_kwargs = dict(project="dkt-gcn")
 
     # data
-    # basepath = "/opt/ml/input/data/"
-    basepath = "/opt/ml/input/JMKIM/"
+    basepath = "/opt/ml/input/data/"
     loader_verbose = True
 
     # dump
@@ -16,17 +15,16 @@ class CFG:
     pred_file = "submission.csv"
 
     # build
-    embedding_dim = 32 #64  # int
-    num_layers = 2 #1  # int
-    alpha = None  # Optional[Union[float, Tensor]]
+    embedding_dim = 123 #64  # int
+    num_layers = 9 #1  # int
+    alpha = 0.0797271712810023  # Optional[Union[float, Tensor]]
     build_kwargs = {}  # other arguments
-    weight = "./weight/best_model.pt"
-    
+    weight = "./weight/model_0.8343592104964914_996.pt"
     # train
-    n_epoch = 1500 #20
-    learning_rate = 1e-3 #0.001
+    n_epoch = 2711 #20
+    learning_rate = 0.00217008368273351 #0.001
     weight_basepath = "./weight"
-
+    # {'embedding_dim': 80, 'num_layers': 4, 'alpha': 0.1495598597240675, 'n_epoch': 2334, 'learning_rate': 0.07941647815932328}
 logging_conf = {  # only used when 'user_wandb==False'
     "version": 1,
     "formatters": {
