@@ -1,4 +1,5 @@
 # Deep Knowledge Tracing
+![image](https://user-images.githubusercontent.com/86918832/215687919-97880ba0-346e-4edf-a4e1-c0088fdb186e.png)
 본 프로젝트는 i-scream 데이터셋을 이용하여 DKT 모델을 구축하는 것입니다. 다만 학생 개개인의 지식 상태를 예측하는 것보다는, 주어진 문제를 맞추었을지 틀렸을지 예측하는 모델을 만드는 것이 목표입니다. 평가 지표는 AUROC 입니다.
 
 ## 팀원 소개
