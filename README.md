@@ -10,6 +10,11 @@
 |[박경태](https://github.com/GT0122)|EDA, Feature Engineering, ML stacking, Sequential Modeling|
 |[박용욱](https://github.com/oceanofglitta)|EDA, Transformers Experiments|
 
+## 활용 장비 및 도구
+- 서버: V100 GPU 서버
+- 개발 IDE: Jupyter Notebook, VS Code
+- 협업 Tool: Notion, Slack, Zoom, Github
+
 ## 데이터 구조
 | 이름 | 설명 |
 | --- | --- |
